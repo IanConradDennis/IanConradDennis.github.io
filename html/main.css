@@ -6,3 +6,9 @@
     color: #c5a82c; 
     background-color: #000080;
 }
+.fc-day-grid-event{
+    overflow-x: scroll;
+    width: auto;
+    white-space: nowrap;
+    
+}
