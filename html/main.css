@@ -7,8 +7,10 @@
     background-color: #000080;
 }
 .fc-day-grid-event{
-    overflow-x: scroll;
     width: auto;
+    border: 13px solid #bed5cd;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     
 }
