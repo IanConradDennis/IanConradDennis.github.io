@@ -1,0 +1,1441 @@
+
+<!DOCTYPE html>
+<script runat="server">
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs)
+
+    End Sub
+</script>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        /* Overwrite AddThis inline z-index styles. */
+        #at20mc[style],
+        #at15s[style] {
+            z-index: 100 !important;
+        }
+    </style>
+    <style>
+        .placeholder {
+            border: 2px dotted #fff000;
+            width: 20px;
+            height: 1em;
+        }
+    </style>
+    <style type="text/css">
+        .at-icon {
+            fill: #fff;
+            border: 0;
+        }
+
+        .at-icon-wrapper {
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        a .at-icon-wrapper {
+            cursor: pointer;
+        }
+
+        .at-rounded, .at-rounded-element .at-icon-wrapper {
+            border-radius: 12%;
+        }
+
+        .at-circular, .at-circular-element .at-icon-wrapper {
+            border-radius: 50%;
+        }
+
+        .addthis_32x32_style .at-icon {
+            width: 2pc;
+            height: 2pc;
+        }
+
+        .addthis_24x24_style .at-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .addthis_20x20_style .at-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .addthis_16x16_style .at-icon {
+            width: 1pc;
+            height: 1pc;
+        }
+
+        #at16lb {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1001;
+            background-color: #000;
+            opacity: .001;
+        }
+
+        #at_complete, #at_error, #at_share, #at_success {
+            position: static !important;
+        }
+
+        .at15dn {
+            display: none;
+        }
+
+        #at15s, #at16p, #at16p form input, #at16p label, #at16p textarea, #at_share .at_item {
+            font-family: arial,helvetica,tahoma,verdana,sans-serif !important;
+            font-size: 9pt !important;
+            outline-style: none;
+            outline-width: 0;
+            line-height: 1em;
+        }
+
+            * html #at15s.mmborder {
+                position: absolute !important;
+            }
+
+            #at15s.mmborder {
+                position: fixed !important;
+                width: 250px !important;
+            }
+
+        #at15s {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
+            float: none;
+            line-height: 1em;
+            margin: 0;
+            overflow: visible;
+            padding: 5px;
+            text-align: left;
+            position: absolute;
+        }
+
+            #at15s a, #at15s span {
+                outline: 0;
+                direction: ltr;
+                text-transform: none;
+            }
+
+            #at15s .at-label {
+                margin-left: 5px;
+            }
+
+            #at15s .at-icon-wrapper {
+                width: 1pc;
+                height: 1pc;
+                vertical-align: middle;
+            }
+
+            #at15s .at-icon {
+                width: 1pc;
+                height: 1pc;
+            }
+
+        .at4-icon {
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: top left;
+            margin: 0;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .addthis_16x16_style .at4-icon, .addthis_default_style .at4-icon, .at4-icon, .at-16x16 {
+            width: 1pc;
+            height: 1pc;
+            line-height: 1pc;
+            background-size: 1pc !important;
+        }
+
+        .addthis_32x32_style .at4-icon, .at-32x32 {
+            width: 2pc;
+            height: 2pc;
+            line-height: 2pc;
+            background-size: 2pc !important;
+        }
+
+        .addthis_24x24_style .at4-icon, .at-24x24 {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            background-size: 24px !important;
+        }
+
+        .addthis_20x20_style .at4-icon, .at-20x20 {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-size: 20px !important;
+        }
+
+        .at4-icon.circular, .circular .at4-icon, .circular.aticon {
+            border-radius: 50%;
+        }
+
+        .at4-icon.rounded, .rounded .at4-icon {
+            border-radius: 4px;
+        }
+
+        .at4-icon-left {
+            float: left;
+        }
+
+        #at15s .at4-icon {
+            text-indent: 20px;
+            padding: 0;
+            overflow: visible;
+            white-space: nowrap;
+            background-size: 1pc;
+            width: 1pc;
+            height: 1pc;
+            background-position: top left;
+            display: inline-block;
+            line-height: 1pc;
+        }
+
+        .addthis_vertical_style .at4-icon, .at4-follow-container .at4-icon {
+            margin-right: 5px;
+        }
+
+        html > body #at15s {
+            width: 250px !important;
+        }
+
+            #at15s.atm {
+                background: none !important;
+                padding: 0 !important;
+                width: 10pc !important;
+            }
+
+        #at15s_inner {
+            background: #fff;
+            border: 1px solid #fff;
+            margin: 0;
+        }
+
+        #at15s_head {
+            position: relative;
+            background: #f2f2f2;
+            padding: 4px;
+            cursor: default;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .at15s_head_success {
+            background: #cafd99 !important;
+            border-bottom: 1px solid #a9d582 !important;
+        }
+
+            .at15s_head_success a, .at15s_head_success span {
+                color: #000 !important;
+                text-decoration: none;
+            }
+
+        #at15s_brand, #at15sptx, #at16_brand {
+            position: absolute;
+        }
+
+        #at15s_brand {
+            top: 4px;
+            right: 4px;
+        }
+
+        .at15s_brandx {
+            right: 20px !important;
+        }
+
+        a#at15sptx {
+            top: 4px;
+            right: 4px;
+            text-decoration: none;
+            color: #4c4c4c;
+            font-weight: 700;
+        }
+
+        #at15sptx:hover {
+            text-decoration: underline;
+        }
+
+        #at16_brand {
+            top: 5px;
+            right: 30px;
+            cursor: default;
+        }
+
+        #at_hover {
+            padding: 4px;
+        }
+
+            #at_hover .at_item, #at_share .at_item {
+                background: #fff !important;
+                float: left !important;
+                color: #4c4c4c !important;
+            }
+
+                #at_share .at_item .at-icon-wrapper {
+                    margin-right: 5px;
+                }
+
+            #at_hover .at_bold {
+                font-weight: 700;
+                color: #000 !important;
+            }
+
+            #at_hover .at_item {
+                width: 7pc !important;
+                padding: 2px 3px !important;
+                margin: 1px;
+                text-decoration: none !important;
+            }
+
+                #at_hover .at_item.athov, #at_hover .at_item:focus, #at_hover .at_item:hover {
+                    margin: 0 !important;
+                }
+
+                #at_hover .at_item.athov, #at_hover .at_item:focus, #at_hover .at_item:hover, #at_share .at_item.athov, #at_share .at_item:hover {
+                    background: #f2f2f2 !important;
+                    border: 1px solid #e5e5e5;
+                    color: #000 !important;
+                    text-decoration: none;
+                }
+
+        .ipad #at_hover .at_item:focus {
+            background: #fff !important;
+            border: 1px solid #fff;
+        }
+
+        .at15t {
+            display: block !important;
+            height: 1pc !important;
+            line-height: 1pc !important;
+            padding-left: 20px !important;
+            background-position: 0 0;
+            text-align: left;
+        }
+
+        .addthis_button, .at15t {
+            cursor: pointer;
+        }
+
+        .addthis_toolbox a.at300b, .addthis_toolbox a.at300m {
+            width: auto;
+        }
+
+        .addthis_toolbox a {
+            margin-bottom: 5px;
+            line-height: initial;
+        }
+
+        .addthis_toolbox.addthis_vertical_style {
+            width: 200px;
+        }
+
+        .addthis_button_facebook_like .fb_iframe_widget {
+            line-height: 100%;
+        }
+
+        .addthis_button_facebook_like iframe.fb_iframe_widget_lift {
+            max-width: none;
+        }
+
+        .addthis_toolbox a.addthis_button_counter, .addthis_toolbox a.addthis_button_facebook_like, .addthis_toolbox a.addthis_button_facebook_send, .addthis_toolbox a.addthis_button_facebook_share, .addthis_toolbox a.addthis_button_foursquare, .addthis_toolbox a.addthis_button_google_plusone, .addthis_toolbox a.addthis_button_linkedin_counter, .addthis_toolbox a.addthis_button_pinterest_pinit, .addthis_toolbox a.addthis_button_stumbleupon_badge, .addthis_toolbox a.addthis_button_tweet {
+            display: inline-block;
+        }
+
+        .at-share-tbx-element .google_plusone_iframe_widget > span > div {
+            vertical-align: top !important;
+        }
+
+        .addthis_toolbox span.addthis_follow_label {
+            display: none;
+        }
+
+        .addthis_toolbox.addthis_vertical_style span.addthis_follow_label {
+            display: block;
+            white-space: nowrap;
+        }
+
+        .addthis_toolbox.addthis_vertical_style a {
+            display: block;
+        }
+
+        .addthis_toolbox.addthis_vertical_style.addthis_32x32_style a {
+            line-height: 2pc;
+            height: 2pc;
+        }
+
+        .addthis_toolbox.addthis_vertical_style .at300bs {
+            margin-right: 4px;
+            float: left;
+        }
+
+        .addthis_toolbox.addthis_20x20_style span {
+            line-height: 20px;
+        }
+
+        .addthis_toolbox.addthis_32x32_style span {
+            line-height: 2pc;
+        }
+
+        .addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact, .addthis_toolbox.addthis_pill_combo_style a {
+            float: left;
+        }
+
+            .addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet {
+                margin-top: -2px;
+            }
+
+        .addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact {
+            margin-right: 4px;
+        }
+
+        .addthis_default_style .addthis_separator {
+            margin: 0 5px;
+            display: inline;
+        }
+
+        div.atclear {
+            clear: both;
+        }
+
+        .addthis_default_style .addthis_separator, .addthis_default_style .at4-icon, .addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300bs, .addthis_default_style .at300m {
+            float: left;
+        }
+
+        .at300b img, .at300bo img {
+            border: 0;
+        }
+
+        a.at300b .at4-icon, a.at300m .at4-icon {
+            display: block;
+        }
+
+        .addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m {
+            padding: 0 2px;
+        }
+
+        .at300b, .at300bo, .at300bs, .at300m {
+            cursor: pointer;
+        }
+
+        .addthis_button_facebook_like.at300b:hover, .addthis_button_facebook_like.at300bs:hover, .addthis_button_facebook_send.at300b:hover, .addthis_button_facebook_send.at300bs:hover {
+            opacity: 1;
+        }
+
+        .addthis_20x20_style .at15t, .addthis_20x20_style .at300bs {
+            overflow: hidden;
+            display: block;
+            height: 20px !important;
+            width: 20px !important;
+            line-height: 20px !important;
+        }
+
+        .addthis_32x32_style .at15t, .addthis_32x32_style .at300bs {
+            overflow: hidden;
+            display: block;
+            height: 2pc !important;
+            width: 2pc !important;
+            line-height: 2pc !important;
+        }
+
+        .at300bs {
+            overflow: hidden;
+            display: block;
+            background-position: 0 0;
+            height: 1pc;
+            width: 1pc;
+            line-height: 1pc !important;
+        }
+
+        .addthis_default_style .at15t_compact, .addthis_default_style .at15t_expanded {
+            margin-right: 4px;
+        }
+
+        #at_share .at_item {
+            width: 123px !important;
+            padding: 4px;
+            margin-right: 2px;
+            border: 1px solid #fff;
+        }
+
+        #at16p {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
+            z-index: 10000001;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            padding: 10px;
+            margin: 0 auto;
+            margin-top: -185px;
+            margin-left: -155px;
+            font-family: arial,helvetica,tahoma,verdana,sans-serif;
+            font-size: 9pt;
+            color: #5e5e5e;
+        }
+
+        #at_share {
+            margin: 0;
+            padding: 0;
+        }
+
+        #at16pt {
+            position: relative;
+            background: #f2f2f2;
+            height: 13px;
+            padding: 5px 10px;
+        }
+
+            #at16pt a, #at16pt h4 {
+                font-weight: 700;
+            }
+
+            #at16pt h4 {
+                display: inline;
+                margin: 0;
+                padding: 0;
+                font-size: 9pt;
+                color: #4c4c4c;
+                cursor: default;
+            }
+
+            #at16pt a {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                color: #4c4c4c;
+                text-decoration: none;
+                padding: 2px;
+            }
+
+                #at15sptx:focus, #at16pt a:focus {
+                    outline: thin dotted;
+                }
+
+        #at15s #at16pf a {
+            top: 1px;
+        }
+
+        #_atssh {
+            width: 1px !important;
+            height: 1px !important;
+            border: 0 !important;
+        }
+
+        .atm {
+            width: 10pc !important;
+            padding: 0;
+            margin: 0;
+            line-height: 9pt;
+            letter-spacing: normal;
+            font-family: arial,helvetica,tahoma,verdana,sans-serif;
+            font-size: 9pt;
+            color: #444;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
+            padding: 4px;
+        }
+
+        .atm-f {
+            text-align: right;
+            border-top: 1px solid #ddd;
+            padding: 5px 8px;
+        }
+
+        .atm-i {
+            background: #fff;
+            border: 1px solid #d5d6d6;
+            padding: 0;
+            margin: 0;
+            box-shadow: 1px 1px 5px rgba(0,0,0,.15);
+        }
+
+        .atm-s {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+            .atm-s a:focus {
+                border: transparent;
+                outline: 0;
+                transition: none;
+            }
+
+            #at_hover.atm-s a, .atm-s a {
+                display: block;
+                text-decoration: none;
+                padding: 4px 10px;
+                color: #235dab !important;
+                font-weight: 400;
+                font-style: normal;
+                transition: none;
+            }
+
+        #at_hover.atm-s .at_bold {
+            color: #235dab !important;
+        }
+
+        #at_hover.atm-s a:hover, .atm-s a:hover {
+            background: #2095f0;
+            text-decoration: none;
+            color: #fff !important;
+        }
+
+        #at_hover.atm-s .at_bold {
+            font-weight: 700;
+        }
+
+        #at_hover.atm-s a:hover .at_bold {
+            color: #fff !important;
+        }
+
+        .atm-s a .at-label {
+            vertical-align: middle;
+            margin-left: 5px;
+            direction: ltr;
+        }
+
+        .at_PinItButton {
+            display: block;
+            width: 40px;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+            background-image: url(//s7.addthis.com/static/t00/pinit00.png);
+            background-repeat: no-repeat;
+        }
+
+            .at_PinItButton:hover {
+                background-position: 0 -20px;
+            }
+
+        .addthis_toolbox .addthis_button_pinterest_pinit {
+            position: relative;
+        }
+
+        .at-share-tbx-element .fb_iframe_widget span {
+            vertical-align: baseline !important;
+        }
+
+        #at16pf {
+            height: auto;
+            text-align: right;
+            padding: 4px 8px;
+        }
+
+        .at-privacy-info {
+            position: absolute;
+            left: 7px;
+            bottom: 7px;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: helvetica,arial,sans-serif;
+            font-size: 10px;
+            line-height: 9pt;
+            letter-spacing: .2px;
+            color: #666;
+        }
+
+            .at-privacy-info:hover {
+                color: #000;
+            }
+
+        .body .wsb-social-share .wsb-social-share-button-vert {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .body .wsb-social-share.addthis_counter_style .addthis_button_tweet.wsb-social-share-button {
+            padding-top: 40px;
+        }
+
+        .body .wsb-social-share.addthis_counter_style .addthis_button_google_plusone.wsb-social-share-button {
+            padding-top: 0;
+        }
+
+        .body .wsb-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-social-share-button {
+            padding-top: 21px;
+        }
+
+        @media print {
+            #at4-follow, #at4-share, #at4-thankyou, #at4-whatsnext, #at4m-mobile, #at15s, .at4, .at4-recommended {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width:400px) {
+            .at4win {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-height:700px) and (max-width:400px) {
+            .at4-thankyou-inner .at4-recommended-container {
+                height: 122px;
+                overflow: hidden;
+            }
+
+            .at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child {
+                border-bottom: 1px solid #c5c5c5;
+            }
+        }
+    </style>
+    <style type="text/css">
+        .at-branding-logo {
+            font-family: helvetica,arial,sans-serif;
+            text-decoration: none;
+            font-size: 10px;
+            display: inline-block;
+            margin: 2px 0;
+            letter-spacing: .2px;
+        }
+
+            .at-branding-logo .at-branding-icon {
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC");
+            }
+
+            .at-branding-logo .at-branding-icon, .at-branding-logo .at-privacy-icon {
+                display: inline-block;
+                height: 10px;
+                width: 10px;
+                margin-left: 4px;
+                margin-right: 3px;
+                margin-bottom: -1px;
+                background-repeat: no-repeat;
+            }
+
+            .at-branding-logo .at-privacy-icon {
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC");
+            }
+
+            .at-branding-logo span {
+                text-decoration: none;
+            }
+
+            .at-branding-logo .at-branding-addthis, .at-branding-logo .at-branding-powered-by {
+                color: #666;
+            }
+
+                .at-branding-logo .at-branding-addthis:hover {
+                    color: #333;
+                }
+
+        .at-cv-with-image .at-branding-addthis, .at-cv-with-image .at-branding-addthis:hover {
+            color: #fff;
+        }
+
+        a.at-branding-logo:visited {
+            color: initial;
+        }
+
+        .at-branding-info {
+            display: inline-block;
+            padding: 0 5px;
+            color: #666;
+            border: 1px solid #666;
+            border-radius: 50%;
+            font-size: 10px;
+            line-height: 9pt;
+            opacity: .7;
+            transition: all .3s ease;
+            text-decoration: none;
+        }
+
+            .at-branding-info span {
+                border: 0;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            .at-branding-info:before {
+                content: 'i';
+                font-family: Times New Roman;
+            }
+
+            .at-branding-info:hover {
+                color: #0780df;
+                border-color: #0780df;
+            }
+    </style>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed%7COpen+Sans" media="all">
+    <link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-8/html/container.html">
+    <script type="text/javascript" async="" src="http://b.scorecardresearch.com/c2/22753435/cs.js"></script>
+    <script src="http://rules.quantcount.com/rules-p-jW2aAdaX8GCcD.js"></script>
+    <script src="https://connect.facebook.net/signals/plugins/identity.js?v=2.7.11" async=""></script>
+    <script src="https://connect.facebook.net/signals/config/164596490722052?v=2.7.11" async=""></script>
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script async="" src="http://b.scorecardresearch.com/beacon.js"></script>
+    <script src="http://edge.quantserve.com/quant.js" async="" type="text/javascript"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="//m.addthis.com/live/red_lojson/300lo.json?si=592825915c0dd47a&amp;bkl=0&amp;bl=1&amp;pdt=66&amp;sid=592825915c0dd47a&amp;pub=xa-4aa96ab7444119c3&amp;rev=v7.14.0-wp&amp;ln=en&amp;pc=men&amp;cb=0&amp;ab=-&amp;dp=chillicothepaints.pointstreaksites.com&amp;fp=view%2Fpaints%2Fschedule-2&amp;fr=view%2Fpaints&amp;of=0&amp;pd=0&amp;irt=1&amp;vcl=1&amp;md=0&amp;ct=1&amp;tct=0&amp;abt=0&amp;cdn=0&amp;pi=1&amp;rb=2&amp;gen=100&amp;chr=UTF-8&amp;colc=1495803281874&amp;jsl=1&amp;uvs=592825816a2bcc77001&amp;skipb=1&amp;callback=addthis.cbs.oln9_74716342244007490"></script>
+    <script type="text/javascript" src="//m.addthisedge.com/live/boost/xa-4aa96ab7444119c3/_ate.track.config_resp"></script>
+    <!-- EDM Public Mode (non WTT) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 757 Colts Schedule</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" />
+    <link rel="stylesheet" type="text/css" href="../main.css" />
+
+</head>
+<body>
+    <div class="content-container container-fluid">
+        <div class="row-fluid">
+            <div id="main-content" class="row-fluid column-container mtm">
+                <h1 class="page-heading">Schedule</h1>
+            </div>
+        </div>
+        <script type="text/javascript">
+    jQuery(document).ready(function() {
+      // Toggle subscription instructions.
+      jQuery('#calendar-subscribe').on('click', function() {
+        jQuery('.calendar-header__instructions').toggle();
+      });
+
+      // Prompt calendar download.
+      jQuery('#calendar-download').on('click', function() {
+        window.location.href = '/calendar_events/calendar/3032/149980/-1/0/0/none/true.ics?1495803265';
+      });
+    });
+        </script>
+        <div class="bpe">
+            <div class="bpe-container">
+                <div class="bpe-content">
+                    <div id="calendar" class="fc fc-ltr fc-unthemed">
+                        <div class="fc-toolbar">
+                            <div class="fc-left">
+                                <h2>2018</h2>
+                            </div>
+                            <div class="fc-center"></div>
+                            <div class="fc-clear"></div>
+                        </div>
+                        <div class="fc-view-container">
+                            <div class="fc-view fc-month-view fc-basic-view">
+                                <table style="display: block; overflow: auto;">
+                                    <thead class="fc-head">
+                                        <tr>
+                                            <td class="fc-widget-header">
+                                                <div class="fc-row fc-widget-header">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+                                                                <th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+                                                                <th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+                                                                <th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+                                                                <th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+                                                                <th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+                                                                <th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fc-body">
+                                        <tr>
+                                            <td class="fc-widget-content">
+                                                <div class="fc-day-grid-container">
+                                                    <div class="fc-day-grid">
+                                                        <div class="fc-row fc-week fc-widget-content">
+                                                            <div class="fc-bg">
+                                                                <table>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="fc-day fc-widget-content fc-sun" data-date="2018-05-06"></td>
+                                                                            <td class="fc-day fc-widget-content fc-mon" data-date="2018-05-07"></td>
+                                                                            <td class="fc-day fc-widget-content fc-tue" data-date="2018-05-08"></td>
+                                                                            <td class="fc-day fc-widget-content fc-wed" data-date="2018-05-09"></td>
+                                                                            <td class="fc-day fc-widget-content fc-thu" data-date="2018-05-10"></td>
+                                                                            <td class="fc-day fc-widget-content fc-fri" data-date="2018-05-11"></td>
+                                                                            <td class="fc-day fc-widget-content fc-sat" data-date="2018-05-12"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="fc-content-skeleton">
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sun" data-date="2018-05-06">May 6</td>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-mon" data-date="2018-05-07">7</td>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-tue" data-date="2018-05-08">8</td>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-wed" data-date="2018-05-09">9</td>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-thu" data-date="2018-05-10">10</td>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-fri" data-date="2018-05-11">11</td>
+                                                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2018-05-12">12</td>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="fc-event-container">
+                                                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                                                    <div class="fc-time mbl">2:00 PM</div>
+                                                                                    <span class="fc-title">Mandatory Parent <br/>& Player Meeting</span>
+                                                                                    <p>
+                                                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                                                    </p>
+                                                                                </a>
+                                                                            </td>
+                                                                            <td class="fc-event-container" align="center">OHSAA<br/>Sectionals</td>
+                                                                            <td class="fc-event-container" align="center">OHSAA<br/>Sectionals</td>
+                                                                            <td class="fc-event-container" align="center">OHSAA<br/>Sectionals</td>
+                                                                            <td class="fc-event-container" align="center">OHSAA<br/>Sectionals</td>
+                                                                            <td class="fc-event-container" align="center">OHSAA<br/>Sectionals</td>
+                                                                            <td class="fc-event-container"></td>
+                                                                        </tr>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="fc-row fc-week fc-widget-content">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-day fc-widget-content fc-sun" data-date="2018-05-13"></td>
+                                            <td class="fc-day fc-widget-content fc-mon" data-date="2018-05-14"></td>
+                                            <td class="fc-day fc-widget-content fc-tue" data-date="2018-05-15"></td>
+                                            <td class="fc-day fc-widget-content fc-wed" data-date="2018-05-16"></td>
+                                            <td class="fc-day fc-widget-content fc-thu" data-date="2018-05-17"></td>
+                                            <td class="fc-day fc-widget-content fc-fri" data-date="2018-05-18"></td>
+                                            <td class="fc-day fc-widget-content fc-sat" data-date="2018-05-19"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sun" data-date="2018-05-13">13</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-mon" data-date="2018-05-14">14</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-tue" data-date="2018-05-15">15</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-wed" data-date="2018-05-16">16</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-thu" data-date="2018-05-17">17</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-fri" data-date="2018-05-18">18</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2018-05-19">19</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-event-container"></td>
+                                            <td class="fc-event-container" align="center">OHSAA<br/>Districts</td>
+                                            <td class="fc-event-container" align="center">OHSAA<br/>Districts</td>
+                                            <td class="fc-event-container" align="center">OHSAA<br/>Districts</td>
+                                            <td class="fc-event-container" align="center">OHSAA<br/>Districts</td>
+                                            <td class="fc-event-container" align="center">OHSAA<br/>Districts</td>
+                                            <td class="fc-event-container"></td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="fc-row fc-week fc-widget-content">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-day fc-widget-content fc-sun" data-date="2018-05-20"></td>
+                                            <td class="fc-day fc-widget-content fc-mon" data-date="2018-05-21"></td>
+                                            <td class="fc-day fc-widget-content fc-tue" data-date="2018-05-22"></td>
+                                            <td class="fc-day fc-widget-content fc-wed" data-date="2018-05-23"></td>
+                                            <td class="fc-day fc-widget-content fc-thu" data-date="2018-05-24"></td>
+                                            <td class="fc-day fc-widget-content fc-fri" data-date="2018-05-25"></td>
+                                            <td class="fc-day fc-widget-content fc-sat" data-date="2018-05-26"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sun" data-date="2018-05-20">20</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-mon" data-date="2018-05-21">21</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-tue" data-date="2018-05-22">22</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-wed" data-date="2018-05-23">23</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-thu" data-date="2018-05-24">24</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-fri" data-date="2018-05-25">25</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2018-05-26">26</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-event-container"></td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                                OHSAA<br />Regionals
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                                OHSAA<br />Regionals
+                                            </td>
+                                            <td class="fc-event-container">Stewart/ Woods Golf Outing</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="fc-row fc-week fc-widget-content">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-day fc-widget-content fc-sun" data-date="2018-05-27"></td>
+                                            <td class="fc-day fc-widget-content fc-mon" data-date="2018-05-28"></td>
+                                            <td class="fc-day fc-widget-content fc-tue" data-date="2018-05-29"></td>
+                                            <td class="fc-day fc-widget-content fc-wed" data-date="2018-05-30"></td>
+                                            <td class="fc-day fc-widget-content fc-thu" data-date="2018-05-31"></td>
+                                            <td class="fc-day fc-widget-content fc-fri" data-date="2018-06-01"></td>
+                                            <td class="fc-day fc-widget-content fc-sat" data-date="2018-06-02"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sun" data-date="2018-05-27">27</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-mon" data-date="2018-05-28">28</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-tue" data-date="2018-05-29">29</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-wed" data-date="2018-05-30">30</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-thu" data-date="2018-05-31">31</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-fri" data-date="2018-06-01">June 1</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2018-06-02">2</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-event-container">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">50th Season Celebration<br />Family Fun Day<br />Alumni Game</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container" align="center">  
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/oF3WzAVePtm" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Chillicothe High School?</span>
+                                                    </p>
+                                                </a>                                              
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                                OHSAA<br />Regionals
+                                            </td>
+                                            <td class="fc-event-container" align="center">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/Y43JLyHSG4G2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 PM</div>
+                                                    <span class="fc-title">Full Team Workout</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                                OHSAA<br />Regionals
+                                            </td>
+                                            <td class="fc-event-container">Stewart/ Woods Golf Outing</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="fc-row fc-week fc-widget-content">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-day fc-widget-content fc-sun" data-date="2017-06-25"></td>
+                                            <td class="fc-day fc-widget-content fc-mon" data-date="2017-06-26"></td>
+                                            <td class="fc-day fc-widget-content fc-tue" data-date="2017-06-27"></td>
+                                            <td class="fc-day fc-widget-content fc-wed" data-date="2017-06-28"></td>
+                                            <td class="fc-day fc-widget-content fc-thu" data-date="2017-06-29"></td>
+                                            <td class="fc-day fc-widget-content fc-fri" data-date="2017-06-30"></td>
+                                            <td class="fc-day fc-widget-content fc-sat" data-date="2017-07-01"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td style="color:#000080; background-color: #c5a82c;" class="fc-day-number fc-sun" data-date="2017-06-25">25</td>
+                                            <td style="color:#000080; background-color: #c5a82c;" class="fc-day-number fc-mon" data-date="2017-06-26">26</td>
+                                            <td style="color:#000080; background-color: #c5a82c;" class="fc-day-number fc-tue" data-date="2017-06-27">27</td>
+                                            <td style="color:#000080; background-color: #c5a82c;" class="fc-day-number fc-wed" data-date="2017-06-28">28</td>
+                                            <td style="color:#000080; background-color: #c5a82c;" class="fc-day-number fc-thu" data-date="2017-06-29">29</td>
+                                            <td style="color:#000080; background-color: #c5a82c;" class="fc-day-number fc-fri" data-date="2017-06-30">30</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2017-07-01">July 1</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-event-container">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="http://chillicothebaseball.com/index.php/events/jadwin-memorial" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />Jadwin Tourney</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Chillicothe, OH</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" data-original-title="" title="">
+                                                    <div class="fc-time mbl">5:30 pm</div>
+                                                    <span class="fc-title">Greenup County<br />at Chillicothe Post 757</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" data-original-title="" title="">
+                                                    <div class="fc-time mbl">Game 2</div>
+                                                    <span class="fc-title">Greenup County <br />at Chillicothe Post 757</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/8Nx4YGBzzpF2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">5:30 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Portsmouth Post 23</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Branch Rickey Park</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/8Nx4YGBzzpF2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">Game 2</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Portsmouth Post 23</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Branch Rickey Park</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td></td>
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="http://www.beastoftheeast.org/" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Beast of the East</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Wheeling, WV</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="http://www.beastoftheeast.org/" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">3:30 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />vs Midwest Marlins</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Garden Park</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/qopVhJEATvH2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />vs TBD</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Garden Park</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="http://www.beastoftheeast.org/" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Beast of the East</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Wheeling, WV</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/qopVhJEATvH2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">10:30 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />vs Ohio Post 151</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Garden Park</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/qopVhJEATvH2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />vs Jr. Independent Players</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Garden Park</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="http://www.beastoftheeast.org/" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Beast of the East</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Wheeling, WV</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/cXX7KySxKBP2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">8:00 am</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />vs West Hills Baseball</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Shadyside, OH</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/cXX7KySxKBP2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">10:30 am</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />vs  Wheeling Post 1</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Shadyside, OH</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="fc-row fc-week fc-widget-content">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fc-day fc-widget-content fc-sun" data-date="2017-07-02"></td>
+                                            <td class="fc-day fc-widget-content fc-mon" data-date="2017-07-03"></td>
+                                            <td class="fc-day fc-widget-content fc-tue" data-date="2017-07-04"></td>
+                                            <td class="fc-day fc-widget-content fc-wed" data-date="2017-07-05"></td>
+                                            <td class="fc-day fc-widget-content fc-thu" data-date="2017-07-06"></td>
+                                            <td class="fc-day fc-widget-content fc-fri" data-date="2017-07-07"></td>
+                                            <td class="fc-day fc-widget-content fc-sat" data-date="2017-07-08"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sun" data-date="2017-07-02">2</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-mon" data-date="2017-07-03">3</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-tue" data-date="2017-07-04">4</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-wed" data-date="2017-07-05">5</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-thu" data-date="2017-07-06">6</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-fri" data-date="2017-07-07">7</td>
+                                            <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2017-07-08">8</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="http://www.beastoftheeast.org/" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl"></div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Beast of the East</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Wheeling, WV</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Grove City Post 164</span><p>
+                                                        <span class="fc-location mts">Grove City</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td class="fc-event-container">
+                                                <a class="home fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" data-original-title="" title="">
+                                                    <div class="fc-time mbl">6:00 pm</div>
+                                                    <span class="fc-title">Waverly Post 142 <br />at Chillicothe Post 757</span><p>
+                                                        <span class="fc-location mts">Hoffman Field</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                            <td></td>
+                                            <td class="fc-event-container">
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/8Nx4YGBzzpF2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">1:00 pm</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Jackson Post 81</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Jackson HS</span>
+                                                    </p>
+                                                </a>
+                                                <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/8Nx4YGBzzpF2" target="_blank" data-original-title="" title="">
+                                                    <div class="fc-time mbl">Game 2</div>
+                                                    <span class="fc-title">Chillicothe Post 757 <br />at Jackson Post 81</span>
+                                                    <p>
+                                                        <span class="fc-location mts">Jackson HS</span>
+                                                    </p>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-row fc-week fc-widget-content">
+                                <div class="fc-bg">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fc-day fc-widget-content fc-sun" data-date="2017-07-09"></td>
+                                                <td class="fc-day fc-widget-content fc-mon" data-date="2017-07-10"></td>
+                                                <td class="fc-day fc-widget-content fc-tue" data-date="2017-07-11"></td>
+                                                <td class="fc-day fc-widget-content fc-wed" data-date="2017-07-12"></td>
+                                                <td class="fc-day fc-widget-content fc-thu" data-date="2017-07-13"></td>
+                                                <td class="fc-day fc-widget-content fc-fri" data-date="2017-07-14"></td>
+                                                <td class="fc-day fc-widget-content fc-sat" data-date="2017-07-15"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="fc-content-skeleton">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sun" data-date="2017-07-09">9</td>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-mon" data-date="2017-07-10">10</td>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-tue" data-date="2017-07-11">11</td>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-wed" data-date="2017-07-12">12</td>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-thu" data-date="2017-07-13">13</td>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-fri" data-date="2017-07-14">14</td>
+                                                <td style="color:#c5a82c; background-color: #000080;" class="fc-day-number fc-sat" data-date="2017-07-15">15</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="fc-event-container">
+                                                    <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/51yR3dJyDfK2" target="_blank" data-original-title="" title="">
+                                                        <div class="fc-time mbl"></div>
+                                                        <span class="fc-title">Chillicothe Post 757 <br />at Ohio State Junior Tournament</span>
+                                                        <p>
+                                                            <span class="fc-location mts">Lancaster, OH</span>
+                                                        </p>
+                                                    </a>
+                                                </td>
+                                                <td class="fc-event-container">
+                                                    <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/51yR3dJyDfK2" target="_blank" data-original-title="" title="">
+                                                        <div class="fc-time mbl"></div>
+                                                        <span class="fc-title">Chillicothe Post 757 <br />at Ohio State Junior Tournament</span>
+                                                        <p>
+                                                            <span class="fc-location mts">Lancaster, OH</span>
+                                                        </p>
+                                                    </a>
+                                                </td>
+                                                <td class="fc-event-container">
+                                                    <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/51yR3dJyDfK2" target="_blank" data-original-title="" title="">
+                                                        <div class="fc-time mbl"></div>
+                                                        <span class="fc-title">Chillicothe Post 757 <br />at Ohio State Junior Tournament</span>
+                                                        <p>
+                                                            <span class="fc-location mts">Lancaster, OH</span>
+                                                        </p>
+                                                    </a>
+                                                </td>
+                                                <td class="fc-event-container">
+                                                    <a class="away fc-day-grid-event fc-h-event fc-event fc-start fc-end team_game fc-away fc-other-month" style="min-height: 100px;" href="https://goo.gl/maps/51yR3dJyDfK2" target="_blank" data-original-title="" title="">
+                                                        <div class="fc-time mbl"></div>
+                                                        <span class="fc-title">Chillicothe Post 757 <br />at Ohio State Junior Tournament</span>
+                                                        <p>
+                                                            <span class="fc-location mts">Lancaster, OH</span>
+                                                        </p>
+                                                    </a>
+                                                </td>
+                                </div>
+                            </div>
+                        </div></td></tr></tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
