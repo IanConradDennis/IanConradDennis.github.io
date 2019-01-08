@@ -1,9 +1,9 @@
 ﻿.away{
-    color: #000080; 
+    color: #000080;
     background-color: #c5a82c;
 }
 .home{
-    color: #c5a82c; 
+    color: #c5a82c;
     background-color: #000080;
 }
 .fc-day-grid-event{
@@ -12,7 +12,12 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    
+
+}
+button {
+  background-color: transperant;
+  outline:none;
+  border:none;
 }
 @media screen and (max-width: 640px) {
 	table {

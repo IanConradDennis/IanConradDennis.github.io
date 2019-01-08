@@ -1,0 +1,27 @@
+button {
+    display: inline-block;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 314px;
+    background-color: transperant;
+    border: none;
+    outline:none;
+}
+
+#close-image img {
+    display: block;
+    height: 67px;
+    width: 324px;
+}
+
+#close-CSS {
+    background-image: url( 'AdenaSubscribeButton.png' );
+    background-size: 310px 60px;
+    height: 67px;
+    width: 324px;
+    background-color: transperant;
+    border: none;
+    outline:none;
+}
