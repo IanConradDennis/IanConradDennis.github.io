@@ -2,11 +2,43 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+  <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
-<body>
-    <iframe height="1000" width="1000" src="https://ianconraddennis.github.io/html/AdenaVGcal.html"></iframe>
-    <iframe height="1000" width="1000" src="https://ianconraddennis.github.io/html/AdenaJVGcal.html">
-</iframe>
-</body>
-</html>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Varsity')">Varsity</button>
+      <button class="tablinks" onclick="openCity(event, 'JuniorVarsity')">Junior Varsity</button>
+    </div>
+    <div id="Varsity" class="tabcontent">
+      <h3>Varsity</h3>
+      <iframe height="1000" width="1000" src="https://ianconraddennis.github.io/html/AdenaVGcal.html"></iframe>
+    </div>
+    <div id="JuniorVarsity" class="tabcontent">
+      <h3>Junior Varsity</h3>
+      <iframe height="1000" width="1000" src="https://ianconraddennis.github.io/html/AdenaJVGcal.html"></iframe>
+    </div>
+    <script>
+      function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
+    </body>
+  </html>
