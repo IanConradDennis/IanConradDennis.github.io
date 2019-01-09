@@ -7,7 +7,7 @@
 </head>
   <body>
     <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'Master')">Master</button>
+      <button class="tablinks" onclick="openCity(event, 'Master')" id="defaultOpen">Master</button>
       <button class="tablinks" onclick="openCity(event, 'Varsity')">Varsity</button>
       <button class="tablinks" onclick="openCity(event, 'JuniorVarsity')">Junior Varsity</button>
     </div>
@@ -44,6 +44,7 @@
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
       }
+      document.getElementById("defaultOpen").click();
       </script>
     </body>
   </html>
